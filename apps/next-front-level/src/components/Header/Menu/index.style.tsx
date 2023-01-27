@@ -7,13 +7,14 @@ export const MenuContainer = styled.div`
   width: 116px;
   height: 80px;
   padding: 30px 24px;
-  color: #fff;
-  background-color: hotpink;
+  color: ${({ theme }) => theme.colors["primary-opposite"]};
+  background-color: ${({ theme }) => theme.colors.primary};
   cursor: pointer;
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
   &:active {
-    box-shadow: 0 0 0 2px #fff inset;
+    box-shadow: ${({ theme }) =>
+      `0 0 0 2px ${theme.colors["primary-opposite"]} inset;`};
   }
 `;

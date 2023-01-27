@@ -8,7 +8,7 @@ export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: hotpink;
+  background-color: ${({ theme }) => theme.colors.primary};
   height: 60px;
   padding: 20px 23px 18px 24px;
 
@@ -81,7 +81,7 @@ export const LangDropDown = styled.div`
   display: none;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: ${({ theme }) => theme.colors["primary-opposite"]};
   font-weight: 700;
   font-size: 14px;
   line-height: 150%;
@@ -96,7 +96,7 @@ export const LangDropDown = styled.div`
 export const CreateButton = styled.button`
   display: none;
   background: linear-gradient(113.2deg, #f056a3 7.78%, #e81b62 95.8%);
-  color: #fff;
+  color: ${({ theme }) => theme.colors["primary-opposite"]};
   font-weight: 700;
   font-size: 12px;
   line-height: 150%;
