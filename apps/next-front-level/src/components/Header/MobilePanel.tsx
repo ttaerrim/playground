@@ -26,7 +26,6 @@ export default function MobilePanel({
 }
 
 const PanelContainer = styled("div")<PanelContainerProps>`
-  display: flex;
   display: ${({ showPanel }) => (showPanel ? "flex" : "none")};
   position: absolute;
   background-color: black;
@@ -36,6 +35,9 @@ const PanelContainer = styled("div")<PanelContainerProps>`
   width: 351px;
   height: 100vh;
   z-index: 1;
+  @media screen and (min-width: 1200px) {
+    display: none;
+  }
 `;
 
 const CloseImage = styled(Image)`

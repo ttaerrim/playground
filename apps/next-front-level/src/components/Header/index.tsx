@@ -14,28 +14,26 @@ export default function Header() {
       <HeaderContainer>
         <LogoDiv>
           <LogoImage src="/images/logo.svg" alt="header logo" />
-          <SubText>The New Land of Opportunity</SubText>
         </LogoDiv>
         <MenuList>
           {["play", "creator", "챌린지", "market", "about"].map((item) => (
             <Menu name={item} key={item} />
           ))}
         </MenuList>
-        <MobileUserMenu>
-          <Image
-            src="/images/user.svg"
-            width={20}
-            height={20}
-            alt="user logo"
-          />
-          <Image
+        <UserMenu>
+          <LinkImg src="/images/link.svg" alt="link logo" />
+          <Hamburger
             src="/images/hamburger.svg"
-            width={15}
-            height={20}
             alt="hamburger logo"
             onClick={handlePanel}
           />
-        </MobileUserMenu>
+          <UserImg src="/images/user.svg" alt="user logo" />
+          <LangDropDown>
+            KR
+            <img src="/images/down-arrow.svg" alt="down arrow" />
+          </LangDropDown>
+          <CreateButton>CREATE</CreateButton>
+        </UserMenu>
       </HeaderContainer>
       <MobilePanel showPanel={showPanel} handlePanel={handlePanel} />
     </WholeContainer>
@@ -82,20 +80,69 @@ const LogoImage = styled("img")`
   }
 `;
 
-const SubText = styled.p`
-  display: none;
+const UserMenu = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 30px;
   @media (min-width: 1200px) {
-    display: block;
-    margin-left: 33px;
-    color: #fff;
+    gap: 40px;
   }
 `;
 
-const MobileUserMenu = styled.div`
-  display: flex;
-  gap: 30px;
+const LinkImg = styled("img")`
+  width: 22px;
+  height: 22px;
+  @media (min-width: 1200px) {
+    width: 30px;
+    height: 30px;
+  }
+`;
+
+const Hamburger = styled("img")`
+  display: block;
+  width: 20px;
+  height: 20px;
   @media (min-width: 1200px) {
     display: none;
+  }
+`;
+
+const UserImg = styled("img")`
+  display: none;
+  @media (min-width: 1200px) {
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+`;
+
+const LangDropDown = styled.div`
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 150%;
+  img {
+    margin-left: 10px;
+  }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+  }
+`;
+
+const CreateButton = styled.button`
+  display: none;
+  background: linear-gradient(113.2deg, #f056a3 7.78%, #e81b62 95.8%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 150%;
+  padding: 26px 16px 26px 56px;
+  @media screen and (min-width: 1200px) {
+    display: block;
   }
 `;
 
