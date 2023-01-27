@@ -10,6 +10,7 @@ export default function Header() {
   const handlePanel = () => {
     setShowPanel((showPanel) => !showPanel);
   };
+  const USER_MENU_LIST = ["info", "quiz", "play", "role", "mark"];
   return (
     <ThemeProvider theme={theme}>
       <S.WholeContainer>
@@ -18,7 +19,7 @@ export default function Header() {
             <S.LogoImage src="/images/logo.svg" alt="header logo" />
           </S.LogoDiv>
           <S.MenuList>
-            {["play", "creator", "챌린지", "market", "about"].map((item) => (
+            {USER_MENU_LIST.map((item) => (
               <Menu name={item} key={item} />
             ))}
           </S.MenuList>

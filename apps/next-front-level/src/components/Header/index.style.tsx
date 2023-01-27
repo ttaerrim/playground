@@ -53,6 +53,7 @@ export const UserMenu = styled.div`
 export const LinkImg = styled("img")`
   width: 22px;
   height: 22px;
+  cursor: pointer;
   @media (min-width: 1200px) {
     width: 30px;
     height: 30px;
@@ -63,6 +64,7 @@ export const Hamburger = styled("img")`
   display: block;
   width: 20px;
   height: 20px;
+  cursor: pointer;
   @media (min-width: 1200px) {
     display: none;
   }
@@ -72,6 +74,7 @@ export const UserImg = styled("img")`
   display: none;
   @media (min-width: 1200px) {
     display: block;
+    cursor: pointer;
     width: 30px;
     height: 30px;
   }
@@ -85,6 +88,7 @@ export const LangDropDown = styled.div`
   font-weight: 700;
   font-size: 14px;
   line-height: 150%;
+  cursor: pointer;
   img {
     margin-left: 10px;
   }
@@ -95,12 +99,20 @@ export const LangDropDown = styled.div`
 
 export const CreateButton = styled.button`
   display: none;
-  background: linear-gradient(113.2deg, #f056a3 7.78%, #e81b62 95.8%);
+  cursor: pointer;
+  background: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors["primary-opposite"]};
+  filter: contrast(4);
   font-weight: 700;
   font-size: 12px;
   line-height: 150%;
   padding: 26px 16px 26px 56px;
+  &:hover {
+    filter: contrast(3);
+  }
+  &:active {
+    filter: contrast(2);
+  }
   @media screen and (min-width: 1200px) {
     display: block;
   }
