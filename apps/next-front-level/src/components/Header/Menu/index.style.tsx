@@ -1,10 +1,6 @@
 import styled from "@emotion/styled";
 
-export default function Menu({ name }: { name: string }) {
-  return <MenuContainer>{name.toUpperCase()}</MenuContainer>;
-}
-
-const MenuContainer = styled.div`
+export const MenuContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
