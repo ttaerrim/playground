@@ -14,7 +14,7 @@ export const HeaderContainer = styled.header`
 
   @media (min-width: 1200px) {
     height: 120px;
-    padding: 17px 45px 23px 99px;
+    padding: 17px 45px 23px 90px;
   }
 `;
 
@@ -30,14 +30,7 @@ export const MenuList = styled.div`
 `;
 
 export const LogoImage = styled("img")`
-  width: 131px;
-  height: 16px;
   cursor: pointer;
-
-  @media (min-width: 1200px) {
-    width: 159px;
-    height: 20px;
-  }
 `;
 
 export const UserMenu = styled.div`

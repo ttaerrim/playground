@@ -16,7 +16,7 @@ export default function Header() {
       <S.WholeContainer>
         <S.HeaderContainer>
           <S.LogoDiv>
-            <S.LogoImage src="/images/logo.svg" alt="header logo" />
+            <S.LogoImage src="/images/logo1.svg" alt="header logo" />
           </S.LogoDiv>
           <S.MenuList>
             {USER_MENU_LIST.map((item) => (
