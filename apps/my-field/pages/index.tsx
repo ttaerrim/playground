@@ -36,6 +36,7 @@ export function Index() {
         Water Drop
       </Link>
       <Link href="input">Input</Link>
+      <Link href="web-animation">Web Animation</Link>
     </StyledPage>
   );
 }
