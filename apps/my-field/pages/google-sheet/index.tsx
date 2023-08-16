@@ -3,8 +3,11 @@ import { useEffect, useState } from "react";
 
 const StyledPage = styled.div``;
 
-export function Index() {
-  const [data, setData] = useState();
+type GoogleData = {
+  [key: string]: string;
+};
+export function GoogleSheet() {
+  const [data, setData] = useState<undefined | GoogleData[]>(undefined);
   const getGoogleData = async () => {
     const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
     const sheetId = "1L1Cmj0OvNfZvrFY4ER9XT5ZzmSgHCl9JhlBTPxbaF_U";
@@ -49,4 +52,4 @@ export function Index() {
     );
 }
 
-export default Index;
+export default GoogleSheet;
