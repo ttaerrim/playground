@@ -30,7 +30,7 @@ const StyledPage = styled.div`
 `;
 
 export function Index() {
-  const list = ["Water Drop", "Input", "Web Animation"];
+  const list = ["Water Drop", "Input", "Web Animation", "Google Sheet"];
   return (
     <StyledPage>
       {list.map((item) => {
