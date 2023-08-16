@@ -30,13 +30,17 @@ const StyledPage = styled.div`
 `;
 
 export function Index() {
+  const list = ["Water Drop", "Input", "Web Animation"];
   return (
     <StyledPage>
-      <Link href="water-drop" className="water-drop">
-        Water Drop
-      </Link>
-      <Link href="input">Input</Link>
-      <Link href="web-animation">Web Animation</Link>
+      {list.map((item) => {
+        const link = item.toLocaleLowerCase().replace(/ /g, "-");
+        return (
+          <Link key="item" href={link}>
+            {item}
+          </Link>
+        );
+      })}
     </StyledPage>
   );
 }
