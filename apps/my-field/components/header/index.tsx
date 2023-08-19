@@ -17,7 +17,7 @@ const StyledHeader = styled.header`
     transition: color 0.3s, font-size 0.3s;
 
     &:hover {
-      color: #3892fe;
+      color: #5d5d5d;
       font-size: 45px;
     }
   }
