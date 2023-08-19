@@ -24,11 +24,18 @@ const StyledHeader = styled.header`
 `;
 
 function Header() {
-  const list = ["Water Drop", "Input", "Web Animation", "Google Sheet"];
+  const list = ["Home", "Water Drop", "Input", "Web Animation", "Google Sheet"];
 
   return (
     <StyledHeader>
       {list.map((item) => {
+        if (item === "Home") {
+          return (
+            <Link key="item" href="/">
+              {item}
+            </Link>
+          );
+        }
         const link = item.toLocaleLowerCase().replace(/ /g, "-");
         return (
           <Link key="item" href={link}>
