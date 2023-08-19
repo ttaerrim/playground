@@ -1,5 +1,11 @@
 import styled from "@emotion/styled";
+import { Noto_Sans_KR } from "@next/font/google";
 import { useEffect, useRef } from "react";
+
+const noto_sans = Noto_Sans_KR({
+  weight: ["400"],
+  display: "swap",
+});
 
 const StyledPage = styled.div`
   display: flex;
@@ -54,8 +60,12 @@ const FirstFloor = styled.div`
 
 const SecondFloor = styled.div`
   border: 2px dotted dodgerblue;
-  padding: 20px;
+  padding: 12px;
+  font-family: ${noto_sans.style.fontFamily};
 
+  p {
+    margin-bottom: 8px;
+  }
   .box3 {
     width: 100px;
     height: 100px;
@@ -64,14 +74,15 @@ const SecondFloor = styled.div`
 `;
 
 export function Index() {
+  const hoverRef = useRef<HTMLDivElement>(null);
   const animateRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const animation = animateRef.current.animate(
       [
-        { transform: "translateX(0)", opacity: 0.5 },
-        { transform: "translateX(-100px)" },
-        { transform: "translateX(200px)", opacity: 1 },
+        { transform: "translateX(100px)", opacity: 0.1 },
+        { transform: "translateX(0)" },
+        { transform: "translateX(300px)", opacity: 1 },
       ],
       {
         duration: 1000,
@@ -84,16 +95,24 @@ export function Index() {
 
     animation.pause();
 
-    window.addEventListener("click", () => {
+    hoverRef.current.addEventListener("mouseover", () => {
       if (animation.playState === "paused") {
         animation.play();
-      } else {
+      }
+    });
+
+    hoverRef.current.addEventListener("mouseout", () => {
+      if (animation.playState === "running") {
         animation.pause();
       }
     });
 
     return () => {
-      window.removeEventListener("click", () => {
+      hoverRef.current.removeEventListener("mouseover", () => {
+        animation.pause();
+      });
+
+      hoverRef.current.removeEventListener("mouseout", () => {
         animation.pause();
       });
     };
@@ -105,8 +124,8 @@ export function Index() {
         <div className="box"></div>
         <div className="box2"></div>
       </FirstFloor>
-      <SecondFloor>
-        click!
+      <SecondFloor ref={hoverRef}>
+        <p>hover here!</p>
         <div className="box3" ref={animateRef}></div>
       </SecondFloor>
     </StyledPage>
