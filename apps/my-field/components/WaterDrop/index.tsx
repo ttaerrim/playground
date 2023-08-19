@@ -11,7 +11,7 @@ const StyledPage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   background-color: #3892fe;
   flex-direction: column;
   font-family: ${zilla.style.fontFamily};

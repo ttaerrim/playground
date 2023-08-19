@@ -1,11 +1,21 @@
 import styled from "@emotion/styled";
+import { Noto_Sans_KR } from "@next/font/google";
 import { useEffect, useState } from "react";
 
-const StyledPage = styled.div``;
+const noto_sans = Noto_Sans_KR({
+  weight: ["400"],
+  display: "swap",
+});
+
+const StyledPage = styled.div`
+  padding: 20px;
+  font-family: ${noto_sans.style.fontFamily};
+`;
 
 type GoogleData = {
   [key: string]: string;
 };
+
 export function GoogleSheet() {
   const [data, setData] = useState<undefined | GoogleData[]>(undefined);
   const getGoogleData = async () => {
@@ -48,7 +58,6 @@ export function GoogleSheet() {
             <p key={item.name}>{`id: ${item.id}, name: ${item.name}`}</p>
           ))}
         </div>
-        🌳
       </StyledPage>
     );
 }

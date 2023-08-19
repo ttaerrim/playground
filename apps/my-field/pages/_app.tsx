@@ -11,8 +11,19 @@ const zilla = Zilla_Slab({
   display: "swap",
 });
 
-const StyledApp = styled.header`
+const StyledApp = styled.div`
   font-family: ${zilla.style.fontFamily};
+  width: 100%;
+  height: 100%;
+`;
+
+const StyledContents = styled.div`
+  height: calc(100dvh - 100px);
+
+  > div {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 function CustomApp({ Component, pageProps }: AppProps) {
@@ -23,7 +34,9 @@ function CustomApp({ Component, pageProps }: AppProps) {
       </Head>
       <StyledApp>
         <Header />
-        <Component {...pageProps} />
+        <StyledContents>
+          <Component {...pageProps} />
+        </StyledContents>
       </StyledApp>
     </>
   );
