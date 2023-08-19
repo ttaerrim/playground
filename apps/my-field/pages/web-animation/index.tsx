@@ -1,12 +1,13 @@
 import styled from "@emotion/styled";
+import { useEffect, useRef } from "react";
 
 const StyledPage = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
   width: 100vw;
   height: 100vh;
-  gap: 50px;
 
   @keyframes box-ani {
     0% {
@@ -19,6 +20,13 @@ const StyledPage = styled.div`
       transform: translateX(300px);
     }
   }
+`;
+
+const FirstFloor = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 
   .box {
     width: 100px;
@@ -44,11 +52,36 @@ const StyledPage = styled.div`
   }
 `;
 
+const SecondFloor = styled.div`
+  .box3 {
+    width: 100px;
+    height: 100px;
+    background: dodgerblue;
+  }
+`;
+
 export function Index() {
+  const animateRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    animateRef.current.animate(
+      [
+        { transform: "translateX(0)", opacity: 0 },
+        { transform: "translateX(200px)", opacity: 1 },
+      ],
+      {
+        duration: 1000,
+      }
+    );
+  }, []);
   return (
     <StyledPage>
-      <div className="box"></div>
-      <div className="box2"></div>
+      <FirstFloor>
+        <div className="box"></div>
+        <div className="box2"></div>
+      </FirstFloor>
+      <SecondFloor>
+        <div className="box3" ref={animateRef}></div>
+      </SecondFloor>
     </StyledPage>
   );
 }
