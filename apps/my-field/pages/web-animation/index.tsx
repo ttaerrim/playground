@@ -53,6 +53,9 @@ const FirstFloor = styled.div`
 `;
 
 const SecondFloor = styled.div`
+  border: 2px dotted dodgerblue;
+  padding: 20px;
+
   .box3 {
     width: 100px;
     height: 100px;
@@ -62,17 +65,40 @@ const SecondFloor = styled.div`
 
 export function Index() {
   const animateRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    animateRef.current.animate(
+    const animation = animateRef.current.animate(
       [
-        { transform: "translateX(0)", opacity: 0 },
+        { transform: "translateX(0)", opacity: 0.5 },
+        { transform: "translateX(-100px)" },
         { transform: "translateX(200px)", opacity: 1 },
       ],
       {
         duration: 1000,
+        easing: "linear",
+        fill: "both",
+        iterations: Infinity,
+        direction: "alternate",
       }
     );
+
+    animation.pause();
+
+    window.addEventListener("click", () => {
+      if (animation.playState === "paused") {
+        animation.play();
+      } else {
+        animation.pause();
+      }
+    });
+
+    return () => {
+      window.removeEventListener("click", () => {
+        animation.pause();
+      });
+    };
   }, []);
+
   return (
     <StyledPage>
       <FirstFloor>
@@ -80,6 +106,7 @@ export function Index() {
         <div className="box2"></div>
       </FirstFloor>
       <SecondFloor>
+        click!
         <div className="box3" ref={animateRef}></div>
       </SecondFloor>
     </StyledPage>
