@@ -38,14 +38,14 @@ function Header() {
       {list.map((item) => {
         if (item === "Home") {
           return (
-            <Link key="item" href="/">
+            <Link key={item} href="/">
               {item}
             </Link>
           );
         }
         const link = item.toLocaleLowerCase().replace(/ /g, "-");
         return (
-          <Link key="item" href={`/${link}`}>
+          <Link key={item} href={`/${link}`}>
             {item}
           </Link>
         );

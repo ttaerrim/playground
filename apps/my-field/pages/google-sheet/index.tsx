@@ -54,8 +54,8 @@ export function GoogleSheet() {
     return (
       <StyledPage>
         <div>
-          {data.map((item) => (
-            <p key={item.name}>{`id: ${item.id}, name: ${item.name}`}</p>
+          {data.map((item, i) => (
+            <p key={i}>{`id: ${item.id}, name: ${item.name}`}</p>
           ))}
         </div>
       </StyledPage>
