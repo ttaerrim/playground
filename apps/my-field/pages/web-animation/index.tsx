@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Noto_Sans_KR } from "@next/font/google";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 const noto_sans = Noto_Sans_KR({
@@ -73,6 +74,20 @@ const SecondFloor = styled.div`
   }
 `;
 
+const StyledLink = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  font-family: ${noto_sans.style.fontFamily};
+  font-size: 20px;
+  padding: 20px;
+  border: 1px dotted #bbbbbb;
+  color: #bbbbbb;
+  margin-bottom: 30px;
+
+  a:hover {
+    color: #626262;
+  }
+`;
 export function Index() {
   const hoverRef = useRef<HTMLDivElement>(null);
   const animateRef = useRef<HTMLDivElement>(null);
@@ -107,19 +122,18 @@ export function Index() {
       }
     });
 
-    return () => {
-      hoverRef.current.removeEventListener("mouseover", () => {
-        animation.pause();
-      });
-
-      hoverRef.current.removeEventListener("mouseout", () => {
-        animation.pause();
-      });
-    };
+    // return () => {
+    //   hoverRef.current.removeEventListener("mouseover", () => {
+    //     animation.pause();
+    //   });
+    // };
   }, []);
 
   return (
     <StyledPage>
+      <StyledLink>
+        <Link href="/web-animation/progress">Progress bar</Link>
+      </StyledLink>
       <FirstFloor>
         <div className="box"></div>
         <div className="box2"></div>

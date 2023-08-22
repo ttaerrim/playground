@@ -45,7 +45,7 @@ function Header() {
         }
         const link = item.toLocaleLowerCase().replace(/ /g, "-");
         return (
-          <Link key="item" href={link}>
+          <Link key="item" href={`/${link}`}>
             {item}
           </Link>
         );

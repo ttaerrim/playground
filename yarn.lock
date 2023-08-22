@@ -2508,10 +2508,10 @@
   resolved "https://registry.yarnpkg.com/@next/swc-darwin-arm64/-/swc-darwin-arm64-13.1.1.tgz#4af00877332231bbd5a3703435fdd0b011e74767"
   integrity sha512-9zRJSSIwER5tu9ADDkPw5rIZ+Np44HTXpYMr0rkM656IvssowPxmhK0rTreC1gpUCYwFsRbxarUJnJsTWiutPg==
 
-"@next/swc-darwin-arm64@^13.4.16":
-  version "13.4.16"
-  resolved "https://registry.yarnpkg.com/@next/swc-darwin-arm64/-/swc-darwin-arm64-13.4.16.tgz#ed6a342f95e5f21213fdadbceb65b40ae678cee0"
-  integrity sha512-Rl6i1uUq0ciRa3VfEpw6GnWAJTSKo9oM2OrkGXPsm7rMxdd2FR5NkKc0C9xzFCI4+QtmBviWBdF2m3ur3Nqstw==
+"@next/swc-darwin-arm64@^13.4.19":
+  version "13.4.19"
+  resolved "https://registry.yarnpkg.com/@next/swc-darwin-arm64/-/swc-darwin-arm64-13.4.19.tgz#77ad462b5ced4efdc26cb5a0053968d2c7dac1b6"
+  integrity sha512-vv1qrjXeGbuF2mOkhkdxMDtv9np7W4mcBtaDnHU+yJG+bBwa6rYsYSCI/9Xm5+TuF5SbZbrWO6G1NfTh1TMjvQ==
 
 "@next/swc-darwin-x64@13.1.1":
   version "13.1.1"
